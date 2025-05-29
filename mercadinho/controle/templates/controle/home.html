@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle de Estoque</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #eee;
+    }
+    .form-container {
+      margin-bottom: 30px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 5px 0;
+      width: 100%;
+    }
+    .search-box {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Controle de Estoque</h1>
+
+  <div class="form-container">
+    <h3>Adicionar Produto</h3>
+    <input type="text" id="cod_produto" placeholder="Código">
+    <input type="text" id="nome" placeholder="Nome do Produto">
+    <input type="text" id="categoria" placeholder="Categoria">
+    <input type="number" id="estoque_atual" placeholder="Estoque atual">
+    <input type="number" id="estoque_minimo" placeholder="Estoque mínimo">
+    <button onclick="adicionarProduto()">Adicionar</button>
+  </div>
+
+  <div class="search-box">
+    <input type="text" id="pesquisa" placeholder="Pesquisar produto..." onkeyup="filtrarTabela()">
+  </div>
+
+  <table id="tabelaEstoque">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Categoria</th>
+        <th>Estoque atual</th>
+        <th>Estoque mínimo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Produtos adicionados vão aparecer aqui -->
+    </tbody>
+  </table>
+
+  <!-- <script>
+    // Javascript gerado
+    // function adicionarProduto() {
+    //   const nome = document.getElementById('nome').value;
+    //   const quantidade = document.getElementById('quantidade').value;
+    //   const categoria = document.getElementById('categoria').value;
+
+    //   if (nome && quantidade && categoria) {
+    //     const tabela = document.getElementById('tabelaEstoque').getElementsByTagName('tbody')[0];
+    //     const novaLinha = tabela.insertRow();
+
+    //     const celulaNome = novaLinha.insertCell(0);
+    //     const celulaQuantidade = novaLinha.insertCell(1);
+    //     const celulaCategoria = novaLinha.insertCell(2);
+
+    //     celulaNome.textContent = nome;
+    //     celulaQuantidade.textContent = quantidade;
+    //     celulaCategoria.textContent = categoria;
+
+    //     document.getElementById('nome').value = '';
+    //     document.getElementById('quantidade').value = '';
+    //     document.getElementById('categoria').value = '';
+    //   } else {
+    //     alert('Por favor, preencha todos os campos.');
+    //   }
+    // }
+
+    // function filtrarTabela() {
+    //   const filtro = document.getElementById('pesquisa').value.toLowerCase();
+    //   const linhas = document.querySelectorAll('#tabelaEstoque tbody tr');
+
+    //   linhas.forEach(linha => {
+    //     const textoLinha = linha.textContent.toLowerCase();
+    //     linha.style.display = textoLinha.includes(filtro) ? '' : 'none';
+    //   });
+    // }
+  </script> -->
+</body>
+</html>
