@@ -1,5 +1,6 @@
 ambiente/
-.venv/
+venv/
+.venv
 *.log
 *.pot
 *.pyc
