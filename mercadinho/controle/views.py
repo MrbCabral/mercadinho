@@ -8,34 +8,6 @@ def home(request):
     return render(request, "controle/home.html")
 
 
-def cadastrar_produto(request):
-    if request.method == 'POST':
-        # Processar o formulário
-        nome = request.POST.get('nome')
-        descricao = request.POST.get('descricao')
-        preco = request.POST.get('preco')
-        quantidade = request.POST.get('quantidade')
-        
-        # Validar os dados (simplificado)
-        if nome and preco and quantidade:
-            Produto.objects.create(
-                nome=nome,
-                descricao=descricao,
-                preco=preco,
-                quantidade=quantidade
-            )
-            return redirect('lista_produtos')
-        else:
-            return HttpResponse("Preencha todos os campos obrigatórios", status=400)
-    
-    # Se for GET, mostrar o formulário vazio
-    return render(request, 'cadastrar_produto.html')
-
-
-def lista_produtos(request):
-    produtos = Produto.objects.all().order_by('-data_cadastro')
-    return render(request, 'lista_produtos.html', {'produtos': produtos})
-
 def produtos_view(request):
     # Se for POST, processa o formulário
     if request.method == 'POST':
