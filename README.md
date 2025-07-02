@@ -11,7 +11,7 @@ pip install -r requirements.txt
 ```
 4. entrar na pasta do projeto
 ```
-cd estoque
+cd mercadinho
 ```
 5. criar banco de dados
 ```
